@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Molee | Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --accent: #000000;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      padding: 80px 24px 48px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 48px;
+      margin: 0 0 16px;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 720px;
+    }
+    nav {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    nav button {
+      background: none;
+      border: 1px solid #ddd;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 64px 24px;
+      border-top: 1px solid #eee;
+    }
+    h2 {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      border: 1px solid #eee;
+      padding: 16px;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+      margin-bottom: 12px;
+    }
+    video {
+      width: 100%;
+      display: block;
+      background: #000;
+    }
+    footer {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 24px 80px;
+      color: var(--muted);
+      border-top: 1px solid #eee;
+    }
+    .lang { display: none; }
+    .lang.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Molee</h1>
+  <div class="subtitle lang active" id="zh">
+    品牌 / 创意 / 影像项目策划人。关注结构、判断与长期价值。
+  </div>
+  <div class="subtitle lang" id="en">
+    Brand & Creative Strategist. Focused on structure, judgment and long-term value.
+  </div>
+
+  <nav>
+    <button onclick="switchLang('zh')">中文</button>
+    <button onclick="switchLang('en')">EN</button>
+  </nav>
+</header>
+
+<section>
+  <h2 class="lang active" id="zh">关于我</h2>
+  <h2 class="lang" id="en">About</h2>
+
+  <p class="lang active" id="zh">
+    这里替换为你的中文个人介绍。建议 3–5 行，强调你是谁、你解决什么问题、你的方法论。
+  </p>
+  <p class="lang" id="en">
+    Replace this with your English bio. 3–5 lines describing who you are and what you do.
+  </p>
+</section>
+
+<section>
+  <h2 class="lang active" id="zh">精选作品</h2>
+  <h2 class="lang" id="en">Selected Works</h2>
+
+  <div class="grid">
+    <!-- 图片作品占位 -->
+    <div class="card">
+      <img src="assets/placeholder-image.jpg" alt="Project Image Placeholder" />
+      <strong>项目标题</strong>
+      <p>这里是项目简短描述。</p>
+    </div>
+
+    <!-- 视频作品，占位 + 可自定义封面 -->
+    <div class="card">
+      <!-- poster 即关键帧封面，可替换为你的视频封面图 -->
+      <video controls poster="assets/video-poster.jpg">
+        <source src="assets/project-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <strong>视频项目标题</strong>
+      <p>视频项目描述文字。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="lang active" id="zh">联系方式</h2>
+  <h2 class="lang" id="en">Contact</h2>
+
+  <p>Email: your@email.com</p>
+  <p>Instagram / LinkedIn / Xiaohongshu</p>
+</section>
+
+<footer>
+  © 2026 Molee. Hosted on GitHub Pages.
+</footer>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll(`#${lang}`).forEach(el => el.classList.add('active'));
+  }
+</script>
+
+</body>
+</html>
